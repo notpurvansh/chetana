@@ -22,40 +22,40 @@ export const config = {
 
   // --- "Before Us" Gallery ---
   beforePhotos: [
-    { src: "photos/b1.JPG", caption: "A moment I held close." },
-    { src: "photos/b2.jpg", caption: "When I loved you in silence." },
-    { src: "photos/b3.JPG", caption: "After you knew." },
+    { src: "/photos/b1.JPG", caption: "A moment I held close." },
+    { src: "/photos/b2.jpg", caption: "When I loved you in silence." },
+    { src: "/photos/b3.JPG", caption: "After you knew." },
   ],
 
   // --- The Beginning Photo ---
   beginningPhoto: {
-    src: "photos/day.JPG",
+    src: "/photos/day.JPG",
     caption: "The day everything changed.",
   },
 
   // --- "Us" Gallery ---
   usPhotos: [
-    { src: "photos/u1.jpg", },
-    { src: "photos/u2.jpg", },
-    { src: "photos/u3.jpg", },
-    { src: "photos/u4.jpg", },
-    { src: "photos/u5.jpg", },
-    { src: "photos/u6.jpg", },
+    { src: "/photos/u1.jpg", },
+    { src: "/photos/u2.jpg", },
+    { src: "/photos/u3.jpg", },
+    { src: "/photos/u4.jpg", },
+    { src: "/photos/u5.jpg", },
+    { src: "/photos/u6.jpg", },
   ],
 
   // --- Personal Memories ---
   personalMemories: [
     {
       id: "",
-      src: "photos/p1.jpg",
+      src: "/photos/p1.jpg",
     },
     {
       id: "",
-      src: "photos/p2.jpg",
+      src: "/photos/p2.jpg",
     },
     {
       id: "",
-      src: "photos/p3.jpg",
+      src: "/photos/p3.jpg",
     },
   ],
 };

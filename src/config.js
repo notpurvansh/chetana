@@ -35,12 +35,12 @@ export const config = {
 
   // --- "Us" Gallery ---
   usPhotos: [
-    { src: "/photos/u1.jpg", },
-    { src: "/photos/u2.jpg", },
-    { src: "/photos/u3.jpg", },
-    { src: "/photos/u4.jpg", },
-    { src: "/photos/u5.jpg", },
-    { src: "/photos/u6.jpg", },
+    { src: "/photos/u1.jpg" },
+    { src: "/photos/u2.JPG" },
+    { src: "/photos/u3.jpg" },
+    { src: "/photos/u4.jpg" },
+    { src: "/photos/u5.JPG" },
+    { src: "/photos/u6.JPG" },
   ],
 
   // --- Personal Memories ---

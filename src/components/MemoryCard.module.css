@@ -1,0 +1,37 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 240px;
+  width: 100%;
+  margin: 0 auto;
+
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1), transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.card[data-visible="true"] { opacity: 1; transform: translateY(0); }
+
+.photo {
+  width: 100%;
+}
+
+.number {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(180, 60, 60, 0.8);
+  text-align: center;
+}
+
+.caption {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.55;
+  text-align: center;
+  letter-spacing: 0.02em;
+}

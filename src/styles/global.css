@@ -1,0 +1,83 @@
+/* ===================================================
+   GLOBAL STYLES — Cinematic Love Story Website
+   =================================================== */
+
+@font-face {
+  font-family: 'Advercase';
+  src: url('/fonts/Advercase-Regular.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Advercase';
+  src: url('/fonts/Advercase-Regular.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black:       #080808;
+  --charcoal:    #141414;
+  --dark:        #1a1a1a;
+  --mid:         #2a2525;
+  --warm-white:  #f5f0ea;
+  --cream:       #e8e0d5;
+  --muted:       #9a9090;
+  --burgundy:    #6b1e1e;
+  --rose:        #8b2d2d;
+  --glow:        rgba(139, 45, 45, 0.18);
+  --glow-soft:   rgba(139, 45, 45, 0.08);
+
+  --advercase:   'Advercase', 'Cinzel', serif;
+  --cinema:      'Advercase', 'Cinzel', serif;
+  --special-bold: 'Cinzel', 'Advercase', serif;
+  --serif:       'Advercase', 'Cormorant Garamond', 'Georgia', serif;
+  --serif-bold:  'Cormorant Garamond', 'Advercase', 'Georgia', serif;
+  --sans:        'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--warm-white);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--burgundy); border-radius: 2px; }
+
+/* Selection */
+::selection { background: var(--burgundy); color: var(--warm-white); }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

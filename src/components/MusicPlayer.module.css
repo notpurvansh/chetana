@@ -1,0 +1,51 @@
+.btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(139, 45, 45, 0.4);
+  background: rgba(8, 8, 8, 0.75);
+  backdrop-filter: blur(12px);
+  color: var(--muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s, border-color 0.3s, transform 0.3s;
+  overflow: hidden;
+}
+
+.btn:hover {
+  color: var(--warm-white);
+  border-color: var(--rose);
+  transform: scale(1.08);
+}
+
+.btn.playing {
+  color: var(--warm-white);
+  border-color: var(--rose);
+  box-shadow: 0 0 14px rgba(139, 45, 45, 0.4);
+}
+
+.hidden {
+  display: none;
+}
+
+.ripple {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139,45,45,0.15) 0%, transparent 70%);
+}
+
+.playing .ripple {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50%       { opacity: 1;   transform: scale(1.2); }
+}

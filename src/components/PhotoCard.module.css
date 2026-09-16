@@ -1,0 +1,89 @@
+.card {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.card[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.imageWrap {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Square box */
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background: #0f0709;
+  border: 1px solid rgba(139, 45, 45, 0.3);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), 0 0 25px rgba(139, 45, 45, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ambient blurred copy behind photo */
+.ambientBlur {
+  position: absolute;
+  inset: -15%;
+  width: 130%;
+  height: 130%;
+  object-fit: cover;
+  filter: blur(28px) brightness(0.35) saturate(1.25);
+  transform: scale(1.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* The photo itself, fitting into the square box without getting cropped */
+.img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.imageWrap:hover .img {
+  transform: scale(1.025);
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  color: var(--muted);
+}
+
+.placeholder span {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(154,144,144,0.4);
+}
+
+.caption {
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 300;
+  color: var(--muted);
+  text-align: center;
+  padding: 0 0.5rem;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}

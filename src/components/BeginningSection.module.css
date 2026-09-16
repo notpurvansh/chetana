@@ -1,0 +1,100 @@
+.section {
+  min-height: 100svh;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 50%, #15090b 0%, #080808 80%);
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.inner {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.header {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1), transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.header[data-visible="true"] { opacity: 1; transform: translateY(0); }
+
+.title {
+  font-family: var(--special-bold);
+  font-size: clamp(1.15rem, 2.6vw, 1.6rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.subtitle {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+  margin-bottom: 1.2rem;
+}
+
+.rule {
+  width: 40px;
+  height: 1px;
+  background: var(--burgundy);
+  margin: 0 auto;
+  opacity: 0.6;
+}
+
+/* Date */
+.dateWrap {
+  position: relative;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 1.5s var(--delay, 0s) cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.5s var(--delay, 0s) cubic-bezier(0.22, 1, 0.36, 1);
+}
+.dateWrap[data-visible="true"] { opacity: 1; transform: translateY(0); }
+
+.glow {
+  position: absolute;
+  inset: -20px;
+  border-radius: 8px;
+  background: radial-gradient(ellipse, rgba(100,30,30,0.2) 0%, transparent 70%);
+  animation: pulse 4s ease-in-out infinite alternate;
+}
+@keyframes pulse {
+  from { opacity: 0.4; }
+  to   { opacity: 1; }
+}
+
+.date {
+  font-family: var(--special-bold);
+  font-size: clamp(1.6rem, 4.2vw, 2.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.14em;
+  text-shadow: 0 0 35px rgba(220, 80, 80, 0.4);
+}
+
+/* Photo */
+.photoWrap {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 1.5s var(--delay, 0s) cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.5s var(--delay, 0s) cubic-bezier(0.22, 1, 0.36, 1);
+}
+.photoWrap[data-visible="true"] { opacity: 1; transform: translateY(0); }

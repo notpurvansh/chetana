@@ -1,0 +1,104 @@
+.section {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 50%, #150a0a 0%, #0a0505 50%, var(--black) 100%);
+  overflow: hidden;
+  padding: 5rem 2rem;
+}
+
+/* Warm deep glow in the centre */
+.glowBg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 40% at 50% 55%, rgba(100, 30, 30, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+  animation: pulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0%   { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.wrapper {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* ---- "And somehow…" ---- */
+.answer {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 2.3vw, 1.4rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+  max-width: 600px;
+  line-height: 1.6;
+
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.answer[data-visible="true"] { opacity: 1; transform: translateY(0); }
+
+/* ---- Date (Special bold) ---- */
+.dateWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transform: scale(0.96) translateY(12px);
+  transition:
+    opacity 1.8s var(--delay, 0s) cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.8s var(--delay, 0s) cubic-bezier(0.22, 1, 0.36, 1);
+}
+.dateWrap[data-visible="true"] { opacity: 1; transform: scale(1) translateY(0); }
+
+.date {
+  font-family: var(--special-bold);
+  font-size: clamp(1.8rem, 4.8vw, 3.0rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.16em;
+  line-height: 1.1;
+  text-shadow:
+    0 0 35px rgba(220, 100, 100, 0.4),
+    0 0 70px rgba(180, 50, 50, 0.2);
+}
+
+/* ---- Caption ---- */
+.caption {
+  font-family: var(--sans);
+  font-size: clamp(0.82rem, 1.8vw, 0.98rem);
+  font-weight: 300;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+  max-width: 480px;
+  line-height: 1.65;
+
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 1.5s var(--delay, 0s) cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.5s var(--delay, 0s) cubic-bezier(0.22, 1, 0.36, 1);
+}
+.caption[data-visible="true"] { opacity: 1; transform: translateY(0); }
+.caption em {
+  font-family: var(--serif-bold);
+  font-style: italic;
+  font-weight: 700;
+  color: #ffffff;
+}

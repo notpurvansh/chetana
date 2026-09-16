@@ -1,0 +1,68 @@
+.section {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 40%, #0d0612 0%, #060408 60%, #030203 100%);
+  overflow: hidden;
+  padding: 5rem 2rem;
+}
+
+/* Soft nebula glow */
+.nebula {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 35% at 50% 50%, rgba(80, 20, 60, 0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 25% at 30% 70%, rgba(50, 10, 80, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  animation: drift 18s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(20px, -15px) scale(1.06); }
+}
+
+.stack {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+  text-align: center;
+}
+
+.line {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2.4vw, 1.55rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--warm-white);
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+  text-shadow: 0 0 35px rgba(255, 230, 220, 0.25);
+
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 1.5s var(--delay, 0s) cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.5s var(--delay, 0s) cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.line[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Highlight "to call her mine" - Special Climax Line Bold */
+.line:last-child {
+  font-family: var(--serif-bold);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2.6vw, 1.68rem);
+  color: #ffffff;
+  text-shadow: 0 0 35px rgba(255, 210, 205, 0.45);
+  letter-spacing: 0.04em;
+}
